@@ -160,7 +160,7 @@
 			this.OutputGroupBox.Controls.Add(this.DeltaETextBox);
 			this.OutputGroupBox.Location = new System.Drawing.Point(157, 12);
 			this.OutputGroupBox.Name = "OutputGroupBox";
-			this.OutputGroupBox.Size = new System.Drawing.Size(257, 184);
+			this.OutputGroupBox.Size = new System.Drawing.Size(145, 184);
 			this.OutputGroupBox.TabIndex = 2;
 			this.OutputGroupBox.TabStop = false;
 			this.OutputGroupBox.Text = "Рассчитанные значения";
@@ -170,7 +170,7 @@
 			this.ExponentTextBox.Location = new System.Drawing.Point(6, 116);
 			this.ExponentTextBox.Name = "ExponentTextBox";
 			this.ExponentTextBox.ReadOnly = true;
-			this.ExponentTextBox.Size = new System.Drawing.Size(114, 20);
+			this.ExponentTextBox.Size = new System.Drawing.Size(133, 20);
 			this.ExponentTextBox.TabIndex = 4;
 			this.ExponentTextBox.TabStop = false;
 			this.SodiumToolTip.SetToolTip(this.ExponentTextBox, "Отношение дельты потенциала к крутизне электродной функции.");
@@ -189,7 +189,7 @@
 			this.SteepnessTextBox.Location = new System.Drawing.Point(6, 77);
 			this.SteepnessTextBox.Name = "SteepnessTextBox";
 			this.SteepnessTextBox.ReadOnly = true;
-			this.SteepnessTextBox.Size = new System.Drawing.Size(114, 20);
+			this.SteepnessTextBox.Size = new System.Drawing.Size(133, 20);
 			this.SteepnessTextBox.TabIndex = 2;
 			this.SteepnessTextBox.TabStop = false;
 			this.SodiumToolTip.SetToolTip(this.SteepnessTextBox, "Крутизна электродной функции S = E3 - E1.");
@@ -217,7 +217,7 @@
 			this.DeltaETextBox.Location = new System.Drawing.Point(6, 38);
 			this.DeltaETextBox.Name = "DeltaETextBox";
 			this.DeltaETextBox.ReadOnly = true;
-			this.DeltaETextBox.Size = new System.Drawing.Size(114, 20);
+			this.DeltaETextBox.Size = new System.Drawing.Size(133, 20);
 			this.DeltaETextBox.TabIndex = 0;
 			this.DeltaETextBox.TabStop = false;
 			this.SodiumToolTip.SetToolTip(this.DeltaETextBox, "Изменение потенциала ΔE = E3 - E2.");
@@ -244,7 +244,7 @@
 			this.SodiumFractionTextBox.Location = new System.Drawing.Point(6, 155);
 			this.SodiumFractionTextBox.Name = "SodiumFractionTextBox";
 			this.SodiumFractionTextBox.ReadOnly = true;
-			this.SodiumFractionTextBox.Size = new System.Drawing.Size(114, 20);
+			this.SodiumFractionTextBox.Size = new System.Drawing.Size(133, 20);
 			this.SodiumFractionTextBox.TabIndex = 6;
 			this.SodiumFractionTextBox.TabStop = false;
 			this.SodiumToolTip.SetToolTip(this.SodiumFractionTextBox, "Искомое содержание натрия в пробе.");

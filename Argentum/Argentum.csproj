@@ -67,7 +67,15 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Oscillius\Argentum\Core\Kernel.cs" />
+    <Compile Include="Oscillius\Argentum\Core\Settings.cs" />
     <Compile Include="Oscillius\Argentum\Core\Utils.cs" />
+    <Compile Include="Oscillius\Argentum\Forms\RawProteinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oscillius\Argentum\Forms\RawProteinForm.Designer.cs">
+      <DependentUpon>RawProteinForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Oscillius\Argentum\Forms\SodiumForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oscillius\Argentum\Forms\RawProteinForm.resx">
+      <DependentUpon>RawProteinForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Oscillius\Argentum\Forms\SodiumForm.resx">
       <DependentUpon>SodiumForm.cs</DependentUpon>
