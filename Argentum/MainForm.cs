@@ -37,5 +37,10 @@ namespace Argentum
 			_sodiumForm.FormClosed -= OnSodiumFormClosed;
 			_sodiumForm = null;
 		}
+
+		//private bool OtherFormsAreOpen (Form exceptForm)
+		//{
+
+		//}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +10,32 @@ namespace Argentum.Oscillius.Argentum.Core
 {
 	public class Utils
 	{
+		private static CultureInfo _cultureInfoUsed = CultureInfo.GetCultureInfo ("ru-RU");
+		private static NumberStyles _numberStyleUsed =
+				NumberStyles.AllowDecimalPoint |
+				NumberStyles.AllowExponent |
+				NumberStyles.AllowLeadingSign |
+				NumberStyles.AllowLeadingWhite |
+				NumberStyles.AllowTrailingWhite;
+		public static string UndefinedString = "Не определено";
 
-		// Возвращает true, если ввод символа, переданного в событии при нажатии кнопки, разрешен. Если ввод разрешен, выходной параметр inputChar будет содержать символ, который нужно передать текст-боксу.
-		public static bool ProcessNumericInput (object sender, KeyPressEventArgs e, out char inputChar)
+		/// <summary>
+		/// CultureInfo, используемая для округления чисел. Является копией _cultureInfoUsed.
+		/// </summary>
+		private static CultureInfo _tempCultureInfo = (CultureInfo) _cultureInfoUsed.Clone ();
+
+
+		// Возвращает true, если ввод символа, переданного в событии при нажатии кнопки, разрешен.
+		public static bool ProcessNumericInput (object sender, KeyPressEventArgs e, bool nonNegative = false)
 		{
 			char keyChar = e.KeyChar;
-			inputChar = keyChar;
 
 			// В поле можно вводить только цифры, символ знака "минус", точку и запятую. Кроме того, должна быть возможность пользоваться Backspace.
 			if (!char.IsControl (keyChar) && !char.IsDigit (keyChar) && keyChar != '.' && keyChar != ',' && keyChar != '-')
+			{
+				return false;
+			}
+			if (nonNegative && keyChar == '-')
 			{
 				return false;
 			}
@@ -107,6 +125,54 @@ namespace Argentum.Oscillius.Argentum.Core
 
 			return true;
 		}
+
+		public static double GetNumberFromTextBox (TextBox source)
+		{
+			string validatedText = ValidateDecimalSeparator (source.Text);
+
+			if (Double.TryParse (validatedText, _numberStyleUsed, _cultureInfoUsed, out double result))
+				return result;
+
+			return Double.NaN;
+		}
+
+		// При необходимости меняет десятичный разделитель (точку, запятую), встретившийся в строке numericString, на разделитель, соответствующий культуре _cultureInfoUsed. Предполагается, что строка numericString представлена в необходимом формате (например, была введена в TextBox с использованием Utils.ProcessNumericInput()), то есть не содержит двух разделителей, точку и запятую одновременно и т.д.
+		private static string ValidateDecimalSeparator (string numericString)
+		{
+			string separator = _cultureInfoUsed.NumberFormat.NumberDecimalSeparator;
+			if (separator == ",")
+			{
+				return numericString.Replace (".", separator);
+			}
+			else if (separator == ".")
+			{
+				return numericString.Replace (",", separator);
+			}
+			else
+			{
+				throw new Exception ("Unknown decimal separator (\"" + separator + "\").");
+			}
+		}
+
+		// Округляет число number до precision-го знака после запятой и возвращает полученное значение.
+		public static double RoundUpNumber (double number, int precision)
+		{
+			if (double.IsNaN (number))
+				throw new ArgumentException ("The 'number' parameter is NaN.");
+			double powerOfTen = Math.Pow (10, precision);
+			return Math.Round (number * powerOfTen) / powerOfTen;
+		}
+
+		// Возвращает строку, представляющую число number, округленное до precision-го знака после запятой и содержащее precision знаков после запятой. Исходное значение number не изменяется.
+		public static string NumberToString (double number, int precision)
+		{
+			_tempCultureInfo.NumberFormat.NumberDecimalDigits = precision;
+			return number.ToString ("N", _tempCultureInfo.NumberFormat);
+		}
+
+		// PROPERTIES
+
+		public static CultureInfo CultureInfoUsed { get { return _cultureInfoUsed; } }
 
 	}
 }
