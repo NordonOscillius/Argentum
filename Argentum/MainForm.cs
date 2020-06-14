@@ -61,6 +61,12 @@ namespace Argentum
 			_rawProteinForm = null;
 		}
 
+		// При закрытии формы сохраняем все настройки.
+		private void MainForm_FormClosing (object sender, FormClosingEventArgs e)
+		{
+			_kernel.SaveSettings ();
+		}
+
 		//private bool OtherFormsAreOpen (Form exceptForm)
 		//{
 

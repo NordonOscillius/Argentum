@@ -14,7 +14,7 @@ namespace Argentum.Oscillius.Argentum.Core
 		/// <summary>
 		/// Объект CultureInfo, используемый для приведения "числовых строк" к единому формату. По умолчанию используется русский языковой стандарт: отсутствуют разделители между классами, в качестве разделителя дробной части используется запятая (1052,076 - тысяча пятьдесят две целых семьдесят шесть тысячных).
 		/// </summary>
-		private static CultureInfo _cultureInfoUsed = CultureInfo.GetCultureInfo ("ru-RU");
+		private static CultureInfo _cultureInfoUsed = CreateUsedCultureInfo ();
 
 		private static NumberStyles _numberStyleUsed =
 				NumberStyles.AllowDecimalPoint |
@@ -29,6 +29,13 @@ namespace Argentum.Oscillius.Argentum.Core
 		/// CultureInfo, используемая для округления чисел. Является копией _cultureInfoUsed.
 		/// </summary>
 		private static CultureInfo _tempCultureInfo = (CultureInfo) _cultureInfoUsed.Clone ();
+
+		private static CultureInfo CreateUsedCultureInfo ()
+		{
+			CultureInfo cultureInfo = (CultureInfo) CultureInfo.GetCultureInfo ("ru-RU").Clone ();
+			cultureInfo.NumberFormat.NumberDecimalDigits = 20;
+			return cultureInfo;
+		}
 
 
 		#region Numeric Stuff

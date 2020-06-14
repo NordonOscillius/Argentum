@@ -62,6 +62,7 @@
 			this.MinimumSize = new System.Drawing.Size(230, 221);
 			this.Name = "MainForm";
 			this.Text = "Argentum v0.1";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			this.ResumeLayout(false);
 
 		}

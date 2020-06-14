@@ -10,6 +10,8 @@ namespace Argentum.Oscillius.Argentum.Core
 {
 	class Kernel
 	{
+		private static Kernel _instance;
+
 		private MainForm _mainForm;
 		private Settings _settings;
 
@@ -18,6 +20,10 @@ namespace Argentum.Oscillius.Argentum.Core
 
 		public Kernel (MainForm mainForm)
 		{
+			if (_instance != null)
+				throw new Exception ("Kernel already exists.");
+			_instance = this;
+
 			_mainForm = mainForm;
 
 			// Читаем настройки или создаем новые.
@@ -37,6 +43,23 @@ namespace Argentum.Oscillius.Argentum.Core
 				File.WriteAllText (SETTINGS_FILE_PATH, _settings.GetIniText (), Encoding.UTF8);
 			}
 		}
+
+		/// <summary>
+		/// Сохраняет все настройки в файл.
+		/// </summary>
+		public void SaveSettings ()
+		{
+			File.WriteAllText (SETTINGS_FILE_PATH, _settings.GetIniText ());
+		}
+
+
+		#region Properties
+
+		public static Kernel Instance { get { return _instance; } }
+
+		public Settings Settings { get { return _settings; } }
+
+		#endregion
 
 	}
 }

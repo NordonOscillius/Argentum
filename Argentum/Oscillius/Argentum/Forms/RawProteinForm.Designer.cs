@@ -30,22 +30,26 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.InputGroupBox = new System.Windows.Forms.GroupBox();
-			this.TubeAndSampleMassLabel = new System.Windows.Forms.Label();
-			this.TubeAndSampleMassTextBox = new System.Windows.Forms.TextBox();
-			this.RawProteinToolTip = new System.Windows.Forms.ToolTip(this.components);
-			this.TubeAndRemainsMassLabel = new System.Windows.Forms.Label();
-			this.TubeAndRemainsMassTextBox = new System.Windows.Forms.TextBox();
-			this.TitrantVolumeLabel = new System.Windows.Forms.Label();
-			this.TitrantVolumeTextBox = new System.Windows.Forms.TextBox();
-			this.TitrantCorrectionLabel = new System.Windows.Forms.Label();
-			this.TitrantCorrectionTextBox = new System.Windows.Forms.TextBox();
-			this.TitrantControlVolumeLabel = new System.Windows.Forms.Label();
 			this.TitrantControlVolumeTextBox = new System.Windows.Forms.TextBox();
+			this.TitrantControlVolumeLabel = new System.Windows.Forms.Label();
+			this.TitrantCorrectionTextBox = new System.Windows.Forms.TextBox();
+			this.TitrantCorrectionLabel = new System.Windows.Forms.Label();
+			this.TitrantVolumeTextBox = new System.Windows.Forms.TextBox();
+			this.TitrantVolumeLabel = new System.Windows.Forms.Label();
+			this.TubeAndRemainsMassTextBox = new System.Windows.Forms.TextBox();
+			this.TubeAndRemainsMassLabel = new System.Windows.Forms.Label();
+			this.TubeAndSampleMassTextBox = new System.Windows.Forms.TextBox();
+			this.TubeAndSampleMassLabel = new System.Windows.Forms.Label();
+			this.RawProteinToolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.TitrantControlVolumeSaveBtn = new System.Windows.Forms.Button();
+			this.TitrantControlVolumeResetBtn = new System.Windows.Forms.Button();
 			this.InputGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// InputGroupBox
 			// 
+			this.InputGroupBox.Controls.Add(this.TitrantControlVolumeResetBtn);
+			this.InputGroupBox.Controls.Add(this.TitrantControlVolumeSaveBtn);
 			this.InputGroupBox.Controls.Add(this.TitrantControlVolumeTextBox);
 			this.InputGroupBox.Controls.Add(this.TitrantControlVolumeLabel);
 			this.InputGroupBox.Controls.Add(this.TitrantCorrectionTextBox);
@@ -63,82 +67,14 @@
 			this.InputGroupBox.TabStop = false;
 			this.InputGroupBox.Text = "Входные параметры";
 			// 
-			// TubeAndSampleMassLabel
+			// TitrantControlVolumeTextBox
 			// 
-			this.TubeAndSampleMassLabel.AutoSize = true;
-			this.TubeAndSampleMassLabel.Location = new System.Drawing.Point(6, 22);
-			this.TubeAndSampleMassLabel.Name = "TubeAndSampleMassLabel";
-			this.TubeAndSampleMassLabel.Size = new System.Drawing.Size(172, 26);
-			this.TubeAndSampleMassLabel.TabIndex = 1;
-			this.TubeAndSampleMassLabel.Text = "Масса малой пробирки с грубой\r\nнавеской пробы, г";
-			// 
-			// TubeAndSampleMassTextBox
-			// 
-			this.TubeAndSampleMassTextBox.Location = new System.Drawing.Point(6, 51);
-			this.TubeAndSampleMassTextBox.Name = "TubeAndSampleMassTextBox";
-			this.TubeAndSampleMassTextBox.Size = new System.Drawing.Size(172, 20);
-			this.TubeAndSampleMassTextBox.TabIndex = 2;
-			this.RawProteinToolTip.SetToolTip(this.TubeAndSampleMassTextBox, "До погружения в колбу Кьельдаля.");
-			// 
-			// RawProteinToolTip
-			// 
-			this.RawProteinToolTip.AutomaticDelay = 5;
-			this.RawProteinToolTip.AutoPopDelay = 30000;
-			this.RawProteinToolTip.InitialDelay = 5;
-			this.RawProteinToolTip.ReshowDelay = 5;
-			this.RawProteinToolTip.UseFading = false;
-			// 
-			// TubeAndRemainsMassLabel
-			// 
-			this.TubeAndRemainsMassLabel.AutoSize = true;
-			this.TubeAndRemainsMassLabel.Location = new System.Drawing.Point(6, 74);
-			this.TubeAndRemainsMassLabel.Name = "TubeAndRemainsMassLabel";
-			this.TubeAndRemainsMassLabel.Size = new System.Drawing.Size(126, 26);
-			this.TubeAndRemainsMassLabel.TabIndex = 3;
-			this.TubeAndRemainsMassLabel.Text = "Масса малой пробирки\r\nс остатком пробы, г";
-			// 
-			// TubeAndRemainsMassTextBox
-			// 
-			this.TubeAndRemainsMassTextBox.Location = new System.Drawing.Point(6, 103);
-			this.TubeAndRemainsMassTextBox.Name = "TubeAndRemainsMassTextBox";
-			this.TubeAndRemainsMassTextBox.Size = new System.Drawing.Size(172, 20);
-			this.TubeAndRemainsMassTextBox.TabIndex = 4;
-			this.RawProteinToolTip.SetToolTip(this.TubeAndRemainsMassTextBox, "После погружения в колбу Кьельдаля.");
-			// 
-			// TitrantVolumeLabel
-			// 
-			this.TitrantVolumeLabel.AutoSize = true;
-			this.TitrantVolumeLabel.Location = new System.Drawing.Point(6, 126);
-			this.TitrantVolumeLabel.Name = "TitrantVolumeLabel";
-			this.TitrantVolumeLabel.Size = new System.Drawing.Size(110, 13);
-			this.TitrantVolumeLabel.TabIndex = 5;
-			this.TitrantVolumeLabel.Text = "Объем титранта, мл";
-			// 
-			// TitrantVolumeTextBox
-			// 
-			this.TitrantVolumeTextBox.Location = new System.Drawing.Point(6, 142);
-			this.TitrantVolumeTextBox.Name = "TitrantVolumeTextBox";
-			this.TitrantVolumeTextBox.Size = new System.Drawing.Size(172, 20);
-			this.TitrantVolumeTextBox.TabIndex = 6;
-			this.RawProteinToolTip.SetToolTip(this.TitrantVolumeTextBox, "Объем раствора серной кислоты,\r\nпошедший на титрование.");
-			// 
-			// TitrantCorrectionLabel
-			// 
-			this.TitrantCorrectionLabel.AutoSize = true;
-			this.TitrantCorrectionLabel.Location = new System.Drawing.Point(6, 165);
-			this.TitrantCorrectionLabel.Name = "TitrantCorrectionLabel";
-			this.TitrantCorrectionLabel.Size = new System.Drawing.Size(163, 13);
-			this.TitrantCorrectionLabel.TabIndex = 7;
-			this.TitrantCorrectionLabel.Text = "Поправка для серной кислоты";
-			// 
-			// TitrantCorrectionTextBox
-			// 
-			this.TitrantCorrectionTextBox.Location = new System.Drawing.Point(6, 181);
-			this.TitrantCorrectionTextBox.Name = "TitrantCorrectionTextBox";
-			this.TitrantCorrectionTextBox.Size = new System.Drawing.Size(172, 20);
-			this.TitrantCorrectionTextBox.TabIndex = 8;
-			this.RawProteinToolTip.SetToolTip(this.TitrantCorrectionTextBox, "Поправочный коэффициент для раствора серной кислоты,\r\nс помощью которого производ" +
-        "илось титрование.");
+			this.TitrantControlVolumeTextBox.Location = new System.Drawing.Point(6, 233);
+			this.TitrantControlVolumeTextBox.Name = "TitrantControlVolumeTextBox";
+			this.TitrantControlVolumeTextBox.Size = new System.Drawing.Size(119, 20);
+			this.TitrantControlVolumeTextBox.TabIndex = 10;
+			this.RawProteinToolTip.SetToolTip(this.TitrantControlVolumeTextBox, "(Vк) Объем раствора серной кислоты, пошедший\r\nна титрование в контрольном опыте.");
+			this.TitrantControlVolumeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnNumericNonNegativeTextBox_KeyPress);
 			// 
 			// TitrantControlVolumeLabel
 			// 
@@ -149,13 +85,110 @@
 			this.TitrantControlVolumeLabel.TabIndex = 9;
 			this.TitrantControlVolumeLabel.Text = "Объем титранта в контрольном\r\nопыте, мл";
 			// 
-			// TitrantControlVolumeTextBox
+			// TitrantCorrectionTextBox
 			// 
-			this.TitrantControlVolumeTextBox.Location = new System.Drawing.Point(6, 233);
-			this.TitrantControlVolumeTextBox.Name = "TitrantControlVolumeTextBox";
-			this.TitrantControlVolumeTextBox.Size = new System.Drawing.Size(172, 20);
-			this.TitrantControlVolumeTextBox.TabIndex = 10;
-			this.RawProteinToolTip.SetToolTip(this.TitrantControlVolumeTextBox, "Объем раствора серной кислоты, пошедший\r\nна титрование в контрольном опыте.");
+			this.TitrantCorrectionTextBox.Location = new System.Drawing.Point(6, 181);
+			this.TitrantCorrectionTextBox.Name = "TitrantCorrectionTextBox";
+			this.TitrantCorrectionTextBox.Size = new System.Drawing.Size(172, 20);
+			this.TitrantCorrectionTextBox.TabIndex = 8;
+			this.RawProteinToolTip.SetToolTip(this.TitrantCorrectionTextBox, "(K) Поправочный коэффициент для раствора серной кислоты,\r\nс помощью которого прои" +
+        "зводилось титрование.");
+			this.TitrantCorrectionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnNumericNonNegativeTextBox_KeyPress);
+			// 
+			// TitrantCorrectionLabel
+			// 
+			this.TitrantCorrectionLabel.AutoSize = true;
+			this.TitrantCorrectionLabel.Location = new System.Drawing.Point(6, 165);
+			this.TitrantCorrectionLabel.Name = "TitrantCorrectionLabel";
+			this.TitrantCorrectionLabel.Size = new System.Drawing.Size(163, 13);
+			this.TitrantCorrectionLabel.TabIndex = 7;
+			this.TitrantCorrectionLabel.Text = "Поправка для серной кислоты";
+			// 
+			// TitrantVolumeTextBox
+			// 
+			this.TitrantVolumeTextBox.Location = new System.Drawing.Point(6, 142);
+			this.TitrantVolumeTextBox.Name = "TitrantVolumeTextBox";
+			this.TitrantVolumeTextBox.Size = new System.Drawing.Size(172, 20);
+			this.TitrantVolumeTextBox.TabIndex = 6;
+			this.RawProteinToolTip.SetToolTip(this.TitrantVolumeTextBox, "(Vт) Объем раствора серной кислоты,\r\nпошедший на титрование.");
+			this.TitrantVolumeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnNumericNonNegativeTextBox_KeyPress);
+			// 
+			// TitrantVolumeLabel
+			// 
+			this.TitrantVolumeLabel.AutoSize = true;
+			this.TitrantVolumeLabel.Location = new System.Drawing.Point(6, 126);
+			this.TitrantVolumeLabel.Name = "TitrantVolumeLabel";
+			this.TitrantVolumeLabel.Size = new System.Drawing.Size(110, 13);
+			this.TitrantVolumeLabel.TabIndex = 5;
+			this.TitrantVolumeLabel.Text = "Объем титранта, мл";
+			// 
+			// TubeAndRemainsMassTextBox
+			// 
+			this.TubeAndRemainsMassTextBox.Location = new System.Drawing.Point(6, 103);
+			this.TubeAndRemainsMassTextBox.Name = "TubeAndRemainsMassTextBox";
+			this.TubeAndRemainsMassTextBox.Size = new System.Drawing.Size(172, 20);
+			this.TubeAndRemainsMassTextBox.TabIndex = 4;
+			this.RawProteinToolTip.SetToolTip(this.TubeAndRemainsMassTextBox, "(m2) После погружения в колбу Кьельдаля.");
+			this.TubeAndRemainsMassTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnNumericNonNegativeTextBox_KeyPress);
+			// 
+			// TubeAndRemainsMassLabel
+			// 
+			this.TubeAndRemainsMassLabel.AutoSize = true;
+			this.TubeAndRemainsMassLabel.Location = new System.Drawing.Point(6, 74);
+			this.TubeAndRemainsMassLabel.Name = "TubeAndRemainsMassLabel";
+			this.TubeAndRemainsMassLabel.Size = new System.Drawing.Size(126, 26);
+			this.TubeAndRemainsMassLabel.TabIndex = 3;
+			this.TubeAndRemainsMassLabel.Text = "Масса малой пробирки\r\nс остатком пробы, г";
+			// 
+			// TubeAndSampleMassTextBox
+			// 
+			this.TubeAndSampleMassTextBox.Location = new System.Drawing.Point(6, 51);
+			this.TubeAndSampleMassTextBox.Name = "TubeAndSampleMassTextBox";
+			this.TubeAndSampleMassTextBox.Size = new System.Drawing.Size(172, 20);
+			this.TubeAndSampleMassTextBox.TabIndex = 2;
+			this.RawProteinToolTip.SetToolTip(this.TubeAndSampleMassTextBox, "(m1) До погружения в колбу Кьельдаля.");
+			this.TubeAndSampleMassTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnNumericNonNegativeTextBox_KeyPress);
+			// 
+			// TubeAndSampleMassLabel
+			// 
+			this.TubeAndSampleMassLabel.AutoSize = true;
+			this.TubeAndSampleMassLabel.Location = new System.Drawing.Point(6, 22);
+			this.TubeAndSampleMassLabel.Name = "TubeAndSampleMassLabel";
+			this.TubeAndSampleMassLabel.Size = new System.Drawing.Size(172, 26);
+			this.TubeAndSampleMassLabel.TabIndex = 1;
+			this.TubeAndSampleMassLabel.Text = "Масса малой пробирки с грубой\r\nнавеской пробы, г";
+			// 
+			// RawProteinToolTip
+			// 
+			this.RawProteinToolTip.AutomaticDelay = 5;
+			this.RawProteinToolTip.AutoPopDelay = 30000;
+			this.RawProteinToolTip.InitialDelay = 5;
+			this.RawProteinToolTip.ReshowDelay = 5;
+			this.RawProteinToolTip.UseFading = false;
+			// 
+			// TitrantControlVolumeSaveBtn
+			// 
+			this.TitrantControlVolumeSaveBtn.Location = new System.Drawing.Point(131, 232);
+			this.TitrantControlVolumeSaveBtn.Name = "TitrantControlVolumeSaveBtn";
+			this.TitrantControlVolumeSaveBtn.Size = new System.Drawing.Size(22, 22);
+			this.TitrantControlVolumeSaveBtn.TabIndex = 3;
+			this.TitrantControlVolumeSaveBtn.TabStop = false;
+			this.TitrantControlVolumeSaveBtn.Text = "D";
+			this.RawProteinToolTip.SetToolTip(this.TitrantControlVolumeSaveBtn, "Запомнить как значение по умолчанию.");
+			this.TitrantControlVolumeSaveBtn.UseVisualStyleBackColor = true;
+			this.TitrantControlVolumeSaveBtn.Click += new System.EventHandler(this.TitrantControlVolumeSaveBtn_Click);
+			// 
+			// TitrantControlVolumeResetBtn
+			// 
+			this.TitrantControlVolumeResetBtn.Location = new System.Drawing.Point(156, 232);
+			this.TitrantControlVolumeResetBtn.Name = "TitrantControlVolumeResetBtn";
+			this.TitrantControlVolumeResetBtn.Size = new System.Drawing.Size(22, 22);
+			this.TitrantControlVolumeResetBtn.TabIndex = 11;
+			this.TitrantControlVolumeResetBtn.TabStop = false;
+			this.TitrantControlVolumeResetBtn.Text = "R";
+			this.RawProteinToolTip.SetToolTip(this.TitrantControlVolumeResetBtn, "Сбросить в значение по умолчанию.");
+			this.TitrantControlVolumeResetBtn.UseVisualStyleBackColor = true;
+			this.TitrantControlVolumeResetBtn.Click += new System.EventHandler(this.TitrantControlVolumeResetBtn_Click);
 			// 
 			// RawProteinForm
 			// 
@@ -165,6 +198,7 @@
 			this.Controls.Add(this.InputGroupBox);
 			this.Name = "RawProteinForm";
 			this.Text = "Сырой протеин";
+			this.Load += new System.EventHandler(this.RawProteinForm_Load);
 			this.InputGroupBox.ResumeLayout(false);
 			this.InputGroupBox.PerformLayout();
 			this.ResumeLayout(false);
@@ -185,5 +219,7 @@
 		private System.Windows.Forms.Label TitrantControlVolumeLabel;
 		private System.Windows.Forms.TextBox TitrantCorrectionTextBox;
 		private System.Windows.Forms.Label TitrantCorrectionLabel;
+		private System.Windows.Forms.Button TitrantControlVolumeSaveBtn;
+		private System.Windows.Forms.Button TitrantControlVolumeResetBtn;
 	}
 }
