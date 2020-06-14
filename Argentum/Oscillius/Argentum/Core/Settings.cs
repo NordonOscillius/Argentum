@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -165,7 +166,7 @@ namespace Argentum.Oscillius.Argentum.Core
 		// Для инкапсуляции изменений.
 		private string ConvertDoubleToString (double number)
 		{
-			return number.ToString ("N", Utils.CultureInfoUsed.NumberFormat);
+			return number.ToString (Utils.CultureInfoUsed.NumberFormat);
 		}
 
 	}

@@ -200,7 +200,7 @@ namespace Argentum.Oscillius.Argentum.Core
 		/// <param name="number">Число, которое необходимо преобразовать в строку. Исходное значение остается неизменным.</param>
 		/// <param name="precision">Количество знаков после запятой, которое необходимо оставить в строковом представлении числа и до которого его необходимо округлить.</param>
 		/// <returns>Новая строка, представляющая число, содержащее precision знаков после запятой и округленное соответствующим образом.</returns>
-		public static string NumberToString (double number, int precision)
+		public static string NumberToStringPrecise (double number, int precision)
 		{
 			_tempCultureInfo.NumberFormat.NumberDecimalDigits = precision;
 			return number.ToString ("N", _tempCultureInfo.NumberFormat);

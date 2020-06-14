@@ -89,7 +89,7 @@ namespace Argentum.Oscillius.Argentum.Forms
 			else
 			{
 				_deltaE = _e3 - _e2;
-				DeltaETextBox.Text = Utils.NumberToString (_deltaE, 2);
+				DeltaETextBox.Text = Utils.NumberToStringPrecise (_deltaE, 2);
 			}
 
 			// Steepness.
@@ -101,7 +101,7 @@ namespace Argentum.Oscillius.Argentum.Forms
 			else
 			{
 				_steepness = _e3 - _e1;
-				SteepnessTextBox.Text = Utils.NumberToString (_steepness, 2);
+				SteepnessTextBox.Text = Utils.NumberToStringPrecise (_steepness, 2);
 			}
 
 			// Exponent.
@@ -113,7 +113,7 @@ namespace Argentum.Oscillius.Argentum.Forms
 			else
 			{
 				_exponent = _deltaE / _steepness;
-				ExponentTextBox.Text = Utils.NumberToString (_exponent, 2);
+				ExponentTextBox.Text = Utils.NumberToStringPrecise (_exponent, 2);
 			}
 
 			// Sodium Fraction Percent.
@@ -135,7 +135,7 @@ namespace Argentum.Oscillius.Argentum.Forms
 				else
 				{
 					_sodiumFractionPercent = 2.2990 / denominator;
-					SodiumFractionTextBox.Text = Utils.NumberToString (_sodiumFractionPercent, _sodiumFractionPercent < .1 ? 3 : 2);
+					SodiumFractionTextBox.Text = Utils.NumberToStringPrecise (_sodiumFractionPercent, _sodiumFractionPercent < .1 ? 3 : 2);
 				}
 			}
 		}
