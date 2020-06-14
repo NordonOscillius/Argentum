@@ -18,6 +18,7 @@ namespace Argentum
 
 		private SodiumForm _sodiumForm;
 		private RawProteinForm _rawProteinForm;
+		private ChloridesForm _chloridesForm;
 
 
 		public MainForm ()
@@ -25,6 +26,12 @@ namespace Argentum
 			InitializeComponent ();
 
 			_kernel = new Kernel (this);
+		}
+
+		// При закрытии формы сохраняем все настройки.
+		private void MainForm_FormClosing (object sender, FormClosingEventArgs e)
+		{
+			_kernel.SaveSettings ();
 		}
 
 		private void NaButton_Click (object sender, EventArgs e)
@@ -61,15 +68,21 @@ namespace Argentum
 			_rawProteinForm = null;
 		}
 
-		// При закрытии формы сохраняем все настройки.
-		private void MainForm_FormClosing (object sender, FormClosingEventArgs e)
+		private void ChloridesButton_Click (object sender, EventArgs e)
 		{
-			_kernel.SaveSettings ();
+			if (_chloridesForm != null)
+				return;
+
+			_chloridesForm = new ChloridesForm ();
+			_chloridesForm.Show ();
+			_chloridesForm.FormClosed += OnChloridesFormClosed;
+			_chloridesForm.Location = new Point (Location.X + Width, Location.Y);
 		}
 
-		//private bool OtherFormsAreOpen (Form exceptForm)
-		//{
-
-		//}
+		private void OnChloridesFormClosed (object sender, FormClosedEventArgs e)
+		{
+			_chloridesForm.FormClosed -= OnChloridesFormClosed;
+			_chloridesForm = null;
+		}
 	}
 }

@@ -30,6 +30,7 @@
 		{
 			this.NaButton = new System.Windows.Forms.Button();
 			this.RawProteinButton = new System.Windows.Forms.Button();
+			this.ChloridesButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// NaButton
@@ -52,11 +53,22 @@
 			this.RawProteinButton.UseVisualStyleBackColor = true;
 			this.RawProteinButton.Click += new System.EventHandler(this.RawProteinButton_Click);
 			// 
+			// ChloridesButton
+			// 
+			this.ChloridesButton.Location = new System.Drawing.Point(12, 104);
+			this.ChloridesButton.Name = "ChloridesButton";
+			this.ChloridesButton.Size = new System.Drawing.Size(190, 40);
+			this.ChloridesButton.TabIndex = 2;
+			this.ChloridesButton.Text = "Хлориды";
+			this.ChloridesButton.UseVisualStyleBackColor = true;
+			this.ChloridesButton.Click += new System.EventHandler(this.ChloridesButton_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(214, 421);
+			this.Controls.Add(this.ChloridesButton);
 			this.Controls.Add(this.RawProteinButton);
 			this.Controls.Add(this.NaButton);
 			this.MinimumSize = new System.Drawing.Size(230, 221);
@@ -71,6 +83,7 @@
 
 		private System.Windows.Forms.Button NaButton;
 		private System.Windows.Forms.Button RawProteinButton;
+		private System.Windows.Forms.Button ChloridesButton;
 	}
 }
 

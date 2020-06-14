@@ -39,6 +39,8 @@
 			this.MassLabel = new System.Windows.Forms.Label();
 			this.MassTextBox = new System.Windows.Forms.TextBox();
 			this.OutputGroupBox = new System.Windows.Forms.GroupBox();
+			this.SodiumFractionTextBox = new System.Windows.Forms.TextBox();
+			this.SodiumFractionLabel = new System.Windows.Forms.Label();
 			this.ExponentTextBox = new System.Windows.Forms.TextBox();
 			this.ExponentLabel = new System.Windows.Forms.Label();
 			this.SteepnessTextBox = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
 			this.DeltaELabel = new System.Windows.Forms.Label();
 			this.DeltaETextBox = new System.Windows.Forms.TextBox();
 			this.SodiumToolTip = new System.Windows.Forms.ToolTip(this.components);
-			this.SodiumFractionLabel = new System.Windows.Forms.Label();
-			this.SodiumFractionTextBox = new System.Windows.Forms.TextBox();
 			this.InputGroupBox.SuspendLayout();
 			this.OutputGroupBox.SuspendLayout();
 			this.SuspendLayout();
@@ -141,7 +141,7 @@
 			// 
 			// MassTextBox
 			// 
-			this.MassTextBox.Location = new System.Drawing.Point(6, 38);
+			this.MassTextBox.Location = new System.Drawing.Point(9, 38);
 			this.MassTextBox.Name = "MassTextBox";
 			this.MassTextBox.Size = new System.Drawing.Size(114, 20);
 			this.MassTextBox.TabIndex = 1;
@@ -164,6 +164,25 @@
 			this.OutputGroupBox.TabIndex = 2;
 			this.OutputGroupBox.TabStop = false;
 			this.OutputGroupBox.Text = "Рассчитанные значения";
+			// 
+			// SodiumFractionTextBox
+			// 
+			this.SodiumFractionTextBox.Location = new System.Drawing.Point(6, 155);
+			this.SodiumFractionTextBox.Name = "SodiumFractionTextBox";
+			this.SodiumFractionTextBox.ReadOnly = true;
+			this.SodiumFractionTextBox.Size = new System.Drawing.Size(133, 20);
+			this.SodiumFractionTextBox.TabIndex = 6;
+			this.SodiumFractionTextBox.TabStop = false;
+			this.SodiumToolTip.SetToolTip(this.SodiumFractionTextBox, "Искомое содержание натрия в пробе.");
+			// 
+			// SodiumFractionLabel
+			// 
+			this.SodiumFractionLabel.AutoSize = true;
+			this.SodiumFractionLabel.Location = new System.Drawing.Point(6, 139);
+			this.SodiumFractionLabel.Name = "SodiumFractionLabel";
+			this.SodiumFractionLabel.Size = new System.Drawing.Size(122, 13);
+			this.SodiumFractionLabel.TabIndex = 5;
+			this.SodiumFractionLabel.Text = "Содержание натрия, %";
 			// 
 			// ExponentTextBox
 			// 
@@ -229,25 +248,6 @@
 			this.SodiumToolTip.InitialDelay = 5;
 			this.SodiumToolTip.ReshowDelay = 5;
 			this.SodiumToolTip.UseFading = false;
-			// 
-			// SodiumFractionLabel
-			// 
-			this.SodiumFractionLabel.AutoSize = true;
-			this.SodiumFractionLabel.Location = new System.Drawing.Point(6, 139);
-			this.SodiumFractionLabel.Name = "SodiumFractionLabel";
-			this.SodiumFractionLabel.Size = new System.Drawing.Size(122, 13);
-			this.SodiumFractionLabel.TabIndex = 5;
-			this.SodiumFractionLabel.Text = "Содержание натрия, %";
-			// 
-			// SodiumFractionTextBox
-			// 
-			this.SodiumFractionTextBox.Location = new System.Drawing.Point(6, 155);
-			this.SodiumFractionTextBox.Name = "SodiumFractionTextBox";
-			this.SodiumFractionTextBox.ReadOnly = true;
-			this.SodiumFractionTextBox.Size = new System.Drawing.Size(133, 20);
-			this.SodiumFractionTextBox.TabIndex = 6;
-			this.SodiumFractionTextBox.TabStop = false;
-			this.SodiumToolTip.SetToolTip(this.SodiumFractionTextBox, "Искомое содержание натрия в пробе.");
 			// 
 			// SodiumForm
 			// 
